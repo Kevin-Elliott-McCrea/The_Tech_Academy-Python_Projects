@@ -1,22 +1,12 @@
-# Python Ver:   3.8.2
-#
-# Author:       Kevin McCrea   
-#
-# Purpose:      Phonebook Demo. Demonstrating OOP, Tkinter GUI module,
-#               using Tkinter Parent and Child relationships.
-#
-# Tested OS:
+
 
 from tkinter import *
 import tkinter as tk
 
 
-# Be sure to import our other modules
-# so we can have access to them
 import tkinter_assignment_gui
 
 
-# Frame is the Tkinter frame class that our own class will inherit from
 class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs):
         Frame.__init__(self, master, *args, **kwargs)
@@ -29,7 +19,6 @@ class ParentWindow(Frame):
         self.master.configure(bg="#F0F0F0")
 
         # load in the GUI widgets from a separate module,
-        # keeping your code compartmentalized and clutter free
         tkinter_assignment_gui.load_gui(self)
 
 
