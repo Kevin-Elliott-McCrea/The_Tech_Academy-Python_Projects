@@ -15,11 +15,17 @@ class ParentWindow(Frame):
         self.master = master
         self.master.minsize(520,250) #(Width, Height)
         self.master.maxsize(520,250)
-        self.master.title("Check files")
+        self.master.title("Browse")
         self.master.configure(bg="#F0F0F0")
 
-        # load in the GUI widgets from a separate module,
-        tkinter_assignment_directory_gui.load_gui(self)
+        
+        self.btn_browse1 = tk.Button(self.master,width=17,height=2,text='Browse...',command=lambda: tkinter_assignment_directory_gui.selectFolder(self))
+        self.btn_browse1.grid(row=0,column=0,padx=(20,0),pady=(10,0),sticky=N+W)
+    
+
+        self.txt_browse1 = tk.Entry(self.master,width=28,text='')
+        self.txt_browse1.grid(row=0,column=4,padx=(30,20),pady=(25,0),sticky=N+E+W)
+
         
 
 
