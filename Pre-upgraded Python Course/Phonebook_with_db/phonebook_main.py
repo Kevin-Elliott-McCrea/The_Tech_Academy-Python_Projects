@@ -1,28 +1,8 @@
-#!/usr/bin/python
-"""
-    #!/usr/bin/python
-    It's a recommended way, proposed in documentation:
-    2.2.2. Executable Python Scripts.
-    In a Unix-like operating system, the program loader
-    takes the presence of these two characters as an
-    indication that the file is a script, and tries to
-    execute that script using the interpreter specified
-    by the rest of the first line in the file.
-"""
-# -*- coding: utf-8 -*-
-"""
-    # -*- coding: utf-8 -*-
-    This sets the charset if it is present on the first two lines of the file.
-    this is Syntax to declare the encoding of a Python source file. It's discussed
-    in PEP 0263 - Defining Python Source Code Encodings.
-    https://www.python.org/dev/peps/pep-0263/
-"""
-#
 # Python Ver:   3.5.1
 #
-# Author:       Daniel A. Christie
+# Author:       Kevin Elliott McCrea
 #
-# Purpose:      Phonebook Demo. Demonstrating OOP, Tkinter GUI module,
+# Purpose:      Phonebook Example. Demonstrating OOP, Tkinter GUI module,
 #               using Tkinter Parent and Child relationships.
 #
 # Tested OS:  This code was written and tested to work with Windows 10.
@@ -32,8 +12,6 @@ from tkinter import *
 import tkinter as tk
 
 
-# Be sure to import our other modules 
-# so we can have access to them
 import phonebook_gui
 import phonebook_func
 
@@ -71,27 +49,13 @@ class ParentWindow(Frame):
         helpmenu.add_separator()
         helpmenu.add_command(label="How to use this program")
         helpmenu.add_separator()
-        helpmenu.add_command(label="About This Phonebook Demo") # add_command is a child menubar item of the add_cascde parent item
+        helpmenu.add_command(label="About This Phonebook Demo") # add_command is a child menubar item of the add_cascade parent item
         menubar.add_cascade(label="Help", menu=helpmenu) # add_cascade is a parent menubar item (visible heading)
-        """
-            Finally, we apply the config method of the widget to display the menu
-            From here we could also pass in additional aprams for additional 
-            functionalityor appearances such as a borderwidth.
-        """
+ 
         self.master.config(menu=menubar, borderwidth='1')
 
         
-"""
-    It is from these few lines of code that Python will begin our gui and application
-    The (if __name__ == "__main__":) part is basically telling Python that if this script
-    is ran, it should start by running the code below this line....in this case we have
-    instructed Python to run the following and in this order:
 
-    root = tk.Tk()              #This Instantiates the Tk.() root frame (window) into being
-    App = ParentWindow(root)    #This instantiates our own class as an App object
-    root.mainloop()             #This ensures the Tkinter class object, our window, to keep looping
-                                #meaning, it will stay open until we instruct it to close
-"""
 if __name__ == "__main__":
     root = tk.Tk()
     App = ParentWindow(root)

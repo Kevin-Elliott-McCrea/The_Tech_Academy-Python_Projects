@@ -1,11 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-#
 # Python Ver:   3.5.1
 #
-# Author:       Daniel A. Christie
+# Author:       Kevin Elliott McCrea
 #
-# Purpose:      Phonebook Demo. Demonstrating OOP, Tkinter GUI module,
+# Purpose:      Phonebook Example. Demonstrating OOP, Tkinter GUI module,
 #               using Tkinter Parent and Child relationships.
 #
 # Tested OS:  This code was written and tested to work with Windows 10.
@@ -14,8 +11,7 @@
 from tkinter import *
 import tkinter as tk
 
-# Be sure to import our other modules 
-# so we can have access to them
+
 import phonebook_main
 import phonebook_func
 
@@ -25,9 +21,6 @@ def load_gui(self):
     """
         Define the default tkinter widgets and their initial
         configuration and place them using the grid geometry.
-        I prefer to use grid as it offers the best control
-        for pacing the widgets, but is a little confusing at
-        first, but that is what this demo is here for...
     """
     self.lbl_fname = tk.Label(self.master,text='First Name:')
     self.lbl_fname.grid(row=0,column=0,padx=(27,0),pady=(10,0),sticky=N+W)

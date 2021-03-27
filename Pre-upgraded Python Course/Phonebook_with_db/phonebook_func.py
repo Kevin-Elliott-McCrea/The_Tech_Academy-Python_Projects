@@ -1,11 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-#
 # Python Ver:   3.5.1
 #
-# Author:       Daniel A. Christie
+# Author:       Kevin Elliott McCrea
 #
-# Purpose:      Phonebook Demo. Demonstrating OOP, Tkinter GUI module,
+# Purpose:      Phonebook example. Demonstrating OOP, Tkinter GUI module,
 #               using Tkinter Parent and Child relationships.
 #
 # Tested OS:  This code was written and tested to work with Windows 10.
@@ -16,8 +13,6 @@ import tkinter as tk
 import sqlite3
 
 
-# Be sure to import our other modules 
-# so we can have access to them
 import phonebook_main
 import phonebook_gui
 
@@ -55,7 +50,6 @@ def create_db(self):
             col_phone TEXT, \
             col_email TEXT \
             );")
-        # You must commit() to save changes & close the database connection
         conn.commit()
     conn.close()
     first_run(self)
@@ -107,8 +101,8 @@ def addToList(self):
     var_lname = self.txt_lname.get()
     # normalize the data to keep it consistent in the database
     var_fname = var_fname.strip() # This will remove any blank spaces before and after the user's entry
-    var_lname = var_lname.strip() # This will ensure that the first character in each word is capitalized
-    var_fname = var_fname.title()
+    var_lname = var_lname.strip() 
+    var_fname = var_fname.title() # This will ensure that the first character in each word is capitalized
     var_lname = var_lname.title()
     var_fullname = ("{} {}".format(var_fname,var_lname)) # combine our normailzed names into a fullname
     print("var_fullname: {}".format(var_fullname))
